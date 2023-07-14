@@ -4,19 +4,20 @@
 
 {% block content %}
     <div class="loginBox"><img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
-        <h3>Sign in here</h3>
+        <h3>Sign-Up here</h3>
         <form method="post">
             {% csrf_token %}
             <div class="inputBox">
-                <input id="uname" type="text" name="username" placeholder="Username" required="">
-                <input id="email" type="email" name="email" placeholder="Email" required="">
-                <input id="pass" type="password" name="password" placeholder="Password" required="">
+                {{ form.username }}
+                {{ form.email }}
+                {{ form.password1 }}
+                {{ form.password2 }}
             </div>
             <input type="submit" name="" value="Login">
         </form>
         <a href="#">Forget Password<br> </a>
         <div class="text-center">
-            <p style="color: #59238F; text-align: center">Sign-Up</p>
+            <p style="color: #59238F; text-align: center">Sign-In</p>
         </div>
 
     </div>

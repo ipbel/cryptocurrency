@@ -4,7 +4,14 @@
 
 {% block content %}
 
-<h1>Home Page</h1>
+    <h1>Home Page</h1>
+
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }}</h1>
+        <a type="button" class="btn btn-secondary btn-lg" href="{% url 'logout' %}">Large button</a>
+    {% else %}
+        <h1>ты не аутентифицирован</h1>
+    {% endif %}
 
 
 {% endblock %}
